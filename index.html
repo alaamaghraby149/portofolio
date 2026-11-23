@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alaa Ayman | Full-Stack Developer (Node.js &amp; Angular)</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Portfolio of Alaa Ayman, a Full-Stack Developer specializing in Node.js and Angular. Explore modern web applications, technical training, and engineering skills.">
+  <meta name="keywords" content="Alaa Ayman, Full-Stack Developer, Node.js, Angular, JavaScript, TypeScript, Web Development, Portfolio">
+  <meta name="author" content="Alaa Ayman">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alaamaghraby149.github.io/">
+  <meta property="og:title" content="Alaa Ayman | Full-Stack Developer">
+  <meta property="og:description" content="Building modern, scalable web applications with Node.js and Angular.">
+  <meta property="og:image" content="assets/images/profile-placeholder.svg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Alaa Ayman | Full-Stack Developer">
+  <meta property="twitter:description" content="Building modern, scalable web applications with Node.js and Angular.">
+  <meta property="twitter:image" content="assets/images/profile-placeholder.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <meta name="theme-color" content="#060A13" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F8FAFC" media="(prefers-color-scheme: light)">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Compiled Tailwind CSS -->
+  <link rel="stylesheet" href="dist/css/style.css">
+
+  <!-- Inline Theme Script to prevent theme flash (FOUC) -->
+  <script>
+    (function() {
+      try {
+        const savedTheme = localStorage.getItem('alaa_portfolio_theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark) || (savedTheme === 'system' && systemPrefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body class="bg-brand-light-bg dark:bg-brand-navy-950 text-brand-light-text dark:text-slate-100 transition-colors duration-300 selection:bg-brand-cyan/25 selection:text-brand-cyan antialiased min-h-screen relative overflow-x-hidden">
+
+  <!-- Custom Cursor Elements (Desktop only) -->
+  <div id="custom-cursor" class="custom-cursor hidden md:block" aria-hidden="true"></div>
+  <div id="custom-cursor-follower" class="custom-cursor-follower hidden md:block" aria-hidden="true"></div>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ==================================================
+       STICKY NAVIGATION BAR
+       ================================================== -->
+  <header id="main-navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Logo / Monogram -->
+        <a href="#home" class="group flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan rounded-lg p-1" aria-label="Alaa Ayman - Back to Top">
+          <div class="relative w-10 h-10 rounded-xl bg-gradient-to-br from-brand-cyan via-brand-blue to-brand-navy-700 flex items-center justify-center p-0.5 shadow-md shadow-brand-cyan/20 group-hover:shadow-brand-cyan/40 transition-shadow">
+            <div class="w-full h-full bg-brand-navy-950 rounded-[10px] flex items-center justify-center">
+              <span class="font-mono font-bold text-xs tracking-tighter text-brand-cyan group-hover:scale-105 transition-transform">&lt;AA/&gt;</span>
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-bold text-base tracking-tight text-slate-900 dark:text-white group-hover:text-brand-cyan transition-colors">Alaa Ayman</span>
+            <span class="text-[11px] font-mono text-brand-blue dark:text-brand-cyan/90 -mt-0.5">Full-Stack Dev</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center space-x-1" aria-label="Main Navigation">
+          <a href="#home" class="nav-link relative px-3.5 py-2 text-sm font-medium transition-colors text-slate-600 dark:text-slate-300 hover:text-brand-cyan dark:hover:text-brand-cyan">
+            Home
+            <span class="nav-indicator absolute bottom-0 left-3.5 right-3.5 h-0.5 bg-brand-cyan scale-x-0 transition-transform origin-left rounded-full"></span>
+          </a>
+          <a href="#about" class="nav-link relative px-3.5 py-2 text-sm font-medium transition-colors text-slate-600 dark:text-slate-300 hover:text-brand-cyan dark:hover:text-brand-cyan">
+            About
+            <span class="nav-indicator absolute bottom-0 left-3.5 right-3.5 h-0.5 bg-brand-cyan scale-x-0 transition-transform origin-left rounded-full"></span>
+          </a>
+          <a href="#education" class="nav-link relative px-3.5 py-2 text-sm font-medium transition-colors text-slate-600 dark:text-slate-300 hover:text-brand-cyan dark:hover:text-brand-cyan">
+            Education
+            <span class="nav-indicator absolute bottom-0 left-3.5 right-3.5 h-0.5 bg-brand-cyan scale-x-0 transition-transform origin-left rounded-full"></span>
+          </a>
+          <a href="#experience" class="nav-link relative px-3.5 py-2 text-sm font-medium transition-colors text-slate-600 dark:text-slate-300 hover:text-brand-cyan dark:hover:text-brand-cyan">
+            Experience
+            <span class="nav-indicator absolute bottom-0 left-3.5 right-3.5 h-0.5 bg-brand-cyan scale-x-0 transition-transform origin-left rounded-full"></span>
+          </a>
+          <a href="#skills" class="nav-link relative px-3.5 py-2 text-sm font-medium transition-colors text-slate-600 dark:text-slate-300 hover:text-brand-cyan dark:hover:text-brand-cyan">
+            Skills
+            <span class="nav-indicator absolute bottom-0 left-3.5 right-3.5 h-0.5 bg-brand-cyan scale-x-0 transition-transform origin-left rounded-full"></span>
+          </a>
+          <a href="#projects" class="nav-link relative px-3.5 py-2 text-sm font-medium transition-colors text-slate-600 dark:text-slate-300 hover:text-brand-cyan dark:hover:text-brand-cyan">
+            Projects
+            <span class="nav-indicator absolute bottom-0 left-3.5 right-3.5 h-0.5 bg-brand-cyan scale-x-0 transition-transform origin-left rounded-full"></span>
+          </a>
+          <a href="#testimonials" class="nav-link relative px-3.5 py-2 text-sm font-medium transition-colors text-slate-600 dark:text-slate-300 hover:text-brand-cyan dark:hover:text-brand-cyan">
+            Testimonials
+            <span class="nav-indicator absolute bottom-0 left-3.5 right-3.5 h-0.5 bg-brand-cyan scale-x-0 transition-transform origin-left rounded-full"></span>
+          </a>
+          <a href="#contact" class="nav-link relative px-3.5 py-2 text-sm font-medium transition-colors text-slate-600 dark:text-slate-300 hover:text-brand-cyan dark:hover:text-brand-cyan">
+            Contact
+            <span class="nav-indicator absolute bottom-0 left-3.5 right-3.5 h-0.5 bg-brand-cyan scale-x-0 transition-transform origin-left rounded-full"></span>
+          </a>
+        </nav>
+
+        <!-- Right Controls: Theme Toggle & Let's Talk CTA -->
+        <div class="flex items-center gap-3">
+          
+          <!-- Theme Switcher Dropdown -->
+          <div class="relative">
+            <button id="theme-toggle-btn" type="button" aria-label="Toggle theme preferences" aria-expanded="false" class="p-2.5 rounded-xl border border-slate-300 dark:border-brand-navy-700 bg-white/80 dark:bg-brand-navy-900/80 hover:border-brand-cyan/50 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-cyan transition-all flex items-center gap-2">
+              <span id="theme-icon-sun" class="hidden w-4 h-4 text-amber-500">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+              </span>
+              <span id="theme-icon-moon" class="hidden w-4 h-4 text-brand-cyan">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+              </span>
+              <span id="theme-icon-system" class="w-4 h-4 text-brand-blue dark:text-brand-cyan">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              </span>
+              <span id="current-theme-label" class="text-xs font-mono font-medium hidden sm:inline">System</span>
+              <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+
+            <!-- Theme Dropdown Menu -->
+            <div id="theme-dropdown-menu" class="hidden absolute right-0 mt-2 w-36 rounded-xl glass-panel-elevated py-1.5 shadow-xl z-50 text-xs font-medium border border-slate-200 dark:border-brand-navy-700 bg-white/95 dark:bg-brand-navy-900/95 backdrop-blur-md">
+              <button type="button" data-theme-value="light" class="w-full flex items-center gap-2.5 px-3 py-2 text-left hover:bg-brand-cyan/15 dark:hover:bg-brand-cyan/20 transition-colors">
+                <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                Light
+              </button>
+              <button type="button" data-theme-value="dark" class="w-full flex items-center gap-2.5 px-3 py-2 text-left hover:bg-brand-cyan/15 dark:hover:bg-brand-cyan/20 transition-colors">
+                <svg class="w-4 h-4 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                Dark
+              </button>
+              <button type="button" data-theme-value="system" class="w-full flex items-center gap-2.5 px-3 py-2 text-left hover:bg-brand-cyan/15 dark:hover:bg-brand-cyan/20 transition-colors">
+                <svg class="w-4 h-4 text-brand-blue dark:text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                System
+              </button>
+            </div>
+          </div>
+
+          <!-- Direct CTA in Nav -->
+          <a href="#contact" data-magnetic class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-brand-cyan text-brand-navy-950 hover:bg-brand-cyan-light shadow-sm shadow-brand-cyan/30 transition-all hover:-translate-y-0.5">
+            <span>Let's Talk</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+
+          <!-- Mobile Hamburger Button -->
+          <button id="mobile-menu-btn" type="button" aria-label="Toggle mobile menu" aria-expanded="false" class="lg:hidden p-2.5 rounded-xl border border-slate-300 dark:border-brand-navy-700 bg-white/80 dark:bg-brand-navy-900/80 text-slate-700 dark:text-slate-200 hover:text-brand-cyan focus:outline-none focus:ring-2 focus:ring-brand-cyan transition-colors">
+            <svg class="menu-icon-open w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <svg class="menu-icon-close w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer & Backdrop -->
+  <div id="mobile-menu-backdrop" class="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden" aria-hidden="true"></div>
+  
+  <aside id="mobile-menu-drawer" class="fixed top-0 right-0 bottom-0 w-72 max-w-[85vw] z-50 bg-white dark:bg-brand-navy-900 border-l border-slate-200 dark:border-brand-navy-800 shadow-2xl p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-out lg:hidden" aria-label="Mobile Navigation">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-slate-200 dark:border-brand-navy-800">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-brand-cyan flex items-center justify-center font-mono font-bold text-xs text-brand-navy-950">&lt;/&gt;</div>
+          <span class="font-bold text-slate-900 dark:text-white">Alaa Ayman</span>
+        </div>
+        <span class="text-xs font-mono text-brand-cyan">Menu</span>
+      </div>
+
+      <nav class="flex flex-col space-y-1.5 mt-6" aria-label="Mobile Menu Links">
+        <a href="#home" class="mobile-nav-link px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-brand-cyan/10 hover:text-brand-cyan transition-colors">Home</a>
+        <a href="#about" class="mobile-nav-link px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-brand-cyan/10 hover:text-brand-cyan transition-colors">About</a>
+        <a href="#education" class="mobile-nav-link px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-brand-cyan/10 hover:text-brand-cyan transition-colors">Education</a>
+        <a href="#experience" class="mobile-nav-link px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-brand-cyan/10 hover:text-brand-cyan transition-colors">Experience</a>
+        <a href="#skills" class="mobile-nav-link px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-brand-cyan/10 hover:text-brand-cyan transition-colors">Skills</a>
+        <a href="#projects" class="mobile-nav-link px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-brand-cyan/10 hover:text-brand-cyan transition-colors">Projects</a>
+        <a href="#testimonials" class="mobile-nav-link px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-brand-cyan/10 hover:text-brand-cyan transition-colors">Testimonials</a>
+        <a href="#contact" class="mobile-nav-link px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-brand-cyan/10 hover:text-brand-cyan transition-colors">Contact</a>
+      </nav>
+    </div>
+
+    <div class="pt-6 border-t border-slate-200 dark:border-brand-navy-800 space-y-3">
+      <a href="assets/cv/Alaa_Ayman_CV.pdf" download="Alaa_Ayman_CV.pdf" class="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-semibold border border-brand-cyan/30 text-brand-cyan hover:bg-brand-cyan/10 transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+        Download CV
+      </a>
+      <a href="#contact" class="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-semibold bg-brand-cyan text-brand-navy-950 font-bold shadow-md shadow-brand-cyan/20">
+        Let's Talk
+      </a>
+    </div>
+  </aside>
+
+  <!-- ==================================================
+       SECTION 1: HOME / HERO
+       ================================================== -->
+  <section id="home" class="relative min-h-screen pt-28 pb-16 flex items-center justify-center overflow-hidden">
+    <!-- Interactive Animated Particle Canvas -->
+    <canvas id="hero-canvas" class="absolute inset-0 w-full h-full pointer-events-auto opacity-75 dark:opacity-85" aria-hidden="true"></canvas>
+
+    <!-- Ambient Glowing Gradient Orbs in Background -->
+    <div class="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-blue/20 dark:bg-brand-blue/30 rounded-full blur-3xl pointer-events-none animate-pulse-glow" aria-hidden="true"></div>
+    <div class="absolute bottom-1/4 right-1/4 translate-x-1/3 translate-y-1/3 w-[30rem] h-[30rem] bg-brand-cyan/15 dark:bg-brand-cyan/20 rounded-full blur-3xl pointer-events-none animate-float-slow" aria-hidden="true"></div>
+    <div class="absolute top-1/3 right-10 w-72 h-72 bg-brand-navy-700/25 rounded-full blur-2xl pointer-events-none" aria-hidden="true"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Hero Content (7 Cols) -->
+        <div class="lg:col-span-7 text-center lg:text-left space-y-6" data-reveal>
+          
+          <!-- Availability Badge -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full glass-panel border border-brand-cyan/30 text-xs font-medium text-slate-800 dark:text-slate-200 shadow-sm">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
+            <span class="tracking-wide">Open to Opportunities</span>
+            <span class="text-slate-400 dark:text-slate-500">•</span>
+            <span class="font-mono text-brand-blue dark:text-brand-cyan text-[11px]">Available for Hire</span>
+          </div>
+
+          <!-- Main Introduction -->
+          <div class="space-y-2">
+            <p class="text-base sm:text-lg font-mono text-brand-blue dark:text-brand-cyan tracking-wide font-medium">
+              Hi, I'm Alaa Ayman
+            </p>
+            
+            <!-- Cycling Typing Role -->
+            <div class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center justify-center lg:justify-start min-h-[48px]">
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue via-brand-cyan to-brand-blue dark:from-white dark:via-brand-cyan dark:to-white">
+                I am a&nbsp;
+              </span>
+              <span id="typing-text" class="text-brand-blue dark:text-brand-cyan border-b-2 border-brand-cyan/40 pb-0.5">Full-Stack Developer</span>
+              <span class="typing-cursor" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
+            Building Digital Experiences <br class="hidden sm:inline">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-cyan dark:from-brand-cyan dark:via-sky-200 dark:to-white">
+              That Make a Difference.
+            </span>
+          </h1>
+
+          <!-- Supporting Description -->
+          <p class="max-w-2xl mx-auto lg:mx-0 text-base sm:text-lg text-slate-600 dark:text-slate-300 font-normal leading-relaxed">
+            I build modern, responsive, and scalable web applications, combining creative frontend experiences with reliable backend solutions.
+          </p>
+
+          <!-- Core Specialization Badges -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-2">
+            <span class="tech-badge">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24"></path><path d="m14.83 9.17 4.24-4.24"></path><path d="m14.83 14.83 4.24 4.24"></path><path d="m9.17 14.83-4.24 4.24"></path></svg>
+              Node.js
+            </span>
+            <span class="tech-badge">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              Angular
+            </span>
+            <span class="tech-badge">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              TypeScript
+            </span>
+            <span class="tech-badge">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M3 9h18"></path><path d="M9 21V9"></path></svg>
+              Tailwind CSS
+            </span>
+          </div>
+
+          <!-- Hero CTA Buttons -->
+          <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+            <!-- CTA 1: View My Work -->
+            <a href="#projects" data-magnetic class="btn-accent px-6 py-3.5 rounded-xl font-bold shadow-glow-cyan text-brand-navy-950">
+              <span>View My Work</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </a>
+
+            <!-- CTA 2: Let's Talk -->
+            <a href="#contact" data-magnetic class="btn-primary px-6 py-3.5 rounded-xl font-semibold">
+              <span>Let's Talk</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+            </a>
+
+            <!-- CTA 3: Download CV -->
+            <a href="assets/cv/Alaa_Ayman_CV.pdf" download="Alaa_Ayman_CV.pdf" class="btn-outline px-6 py-3.5 rounded-xl font-medium border-slate-300 dark:border-brand-navy-700 hover:border-brand-cyan">
+              <svg class="w-4 h-4 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+              <span>Download CV</span>
+            </a>
+          </div>
+
+          <!-- Social Quick Links -->
+          <div class="pt-4 flex items-center justify-center lg:justify-start gap-4 text-slate-500 dark:text-slate-400">
+            <span class="text-xs font-mono tracking-wider uppercase">Connect:</span>
+            <a href="https://github.com/alaamaghraby149" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg hover:text-brand-cyan hover:bg-brand-cyan/10 transition-colors" aria-label="GitHub Profile">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/alaa-maghraby" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg hover:text-brand-cyan hover:bg-brand-cyan/10 transition-colors" aria-label="LinkedIn Profile">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="mailto:aymalaaan11@gmail.com" class="p-2 rounded-lg hover:text-brand-cyan hover:bg-brand-cyan/10 transition-colors" aria-label="Send Email">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Hero Visual / Profile Image Placeholder (5 Cols) -->
+        <div class="lg:col-span-5 flex justify-center" data-reveal data-reveal-delay="200">
+          <div class="relative w-full max-w-md" data-tilt>
+            
+            <!-- Outer Glow Rings -->
+            <div class="absolute -inset-3 rounded-3xl bg-gradient-to-r from-brand-cyan/30 via-brand-blue/30 to-brand-navy-700/40 blur-xl opacity-60 animate-pulse-glow" aria-hidden="true"></div>
+            
+            <!-- Profile Card / Image Container -->
+            <div class="relative rounded-3xl overflow-hidden glass-panel border border-brand-cyan/30 shadow-2xl p-3 bg-white/70 dark:bg-brand-navy-900/80">
+              <img 
+                src="assets/images/portofolio-image.jpeg" 
+                alt="Alaa Ayman - Full-Stack Developer Profile Placeholder" 
+                class="w-full h-auto aspect-square object-cover rounded-2xl shadow-inner hover:scale-[1.02] transition-transform duration-500"
+                width="600"
+                height="600"
+                loading="eager"
+              >
+            </div>
+
+            <!-- Floating Tech Capsule (Bottom Left) -->
+            <div class="absolute -bottom-4 -left-4 glass-panel border border-brand-cyan/40 rounded-2xl px-4 py-2.5 shadow-xl flex items-center gap-3 animate-float-slow bg-white/90 dark:bg-brand-navy-900/90">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/15 flex items-center justify-center text-emerald-400 font-mono font-bold text-xs">
+                &lt;/&gt;
+              </div>
+              <div>
+                <p class="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase">Architecture</p>
+                <p class="text-xs font-bold text-slate-800 dark:text-white">Clean &amp; Scalable Code</p>
+              </div>
+            </div>
+
+            <!-- Floating Tech Capsule (Top Right) -->
+            <div class="absolute -top-4 -right-4 glass-panel border border-brand-cyan/40 rounded-2xl px-4 py-2.5 shadow-xl flex items-center gap-3 animate-float-reverse bg-white/90 dark:bg-brand-navy-900/90">
+              <div class="w-8 h-8 rounded-lg bg-brand-cyan/20 flex items-center justify-center text-brand-cyan font-mono font-bold text-xs">
+                ⚡
+              </div>
+              <div>
+                <p class="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase">Specialization</p>
+                <p class="text-xs font-bold text-slate-800 dark:text-white">Node.js &amp; Angular</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scroll Indicator Arrow -->
+    <a href="#about" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-400 dark:text-slate-500 hover:text-brand-cyan transition-colors" aria-label="Scroll to About section">
+      <span class="text-[11px] font-mono uppercase tracking-widest">Scroll</span>
+      <div class="w-6 h-10 rounded-full border-2 border-slate-300 dark:border-brand-navy-700 flex items-start justify-center p-1.5">
+        <div class="w-1.5 h-2.5 rounded-full bg-brand-cyan animate-bounce"></div>
+      </div>
+    </a>
+  </section>
+
+  <!-- ==================================================
+       SECTION 2: ABOUT
+       ================================================== -->
+  <section id="about" class="py-24 relative overflow-hidden bg-slate-50/50 dark:bg-brand-navy-900/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Tag & Heading -->
+      <div class="text-center max-w-3xl mx-auto mb-16" data-reveal>
+        <span class="section-tag mb-4">About Me</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Passionate Developer, Dedicated Problem Solver
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300">
+          Full-Stack Developer specializing in Node.js and Angular, driven by engineering elegant and user-centric web applications.
+        </p>
+      </div>
+
+      <!-- Modern Split Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Interactive Developer Profile Architecture Card (5 Cols) -->
+        <div class="lg:col-span-5" data-reveal data-reveal-delay="100">
+          <div class="relative rounded-3xl glass-panel border border-brand-cyan/25 shadow-2xl p-6 bg-white/80 dark:bg-brand-navy-850/80" data-tilt>
+            
+            <!-- Window Bar -->
+            <div class="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-brand-navy-800">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+              </div>
+              <span class="text-xs font-mono text-slate-400 dark:text-slate-500">developer.config.json</span>
+              <span class="text-xs font-mono text-brand-cyan">TS / JS</span>
+            </div>
+
+            <!-- Code representation of Alaa's engineering profile -->
+            <div class="mt-4 font-mono text-xs leading-relaxed overflow-x-auto text-slate-700 dark:text-slate-300 space-y-1">
+              <p><span class="text-purple-600 dark:text-purple-400 font-semibold">const</span> <span class="text-brand-blue dark:text-brand-cyan">developer</span> = {</p>
+              <p class="pl-4"><span class="text-slate-500 dark:text-slate-400">name:</span> <span class="text-emerald-600 dark:text-emerald-400">"Alaa Ayman"</span>,</p>
+              <p class="pl-4"><span class="text-slate-500 dark:text-slate-400">role:</span> <span class="text-emerald-600 dark:text-emerald-400">"Full-Stack Developer"</span>,</p>
+              <p class="pl-4"><span class="text-slate-500 dark:text-slate-400">focus:</span> [</p>
+              <p class="pl-8"><span class="text-emerald-600 dark:text-emerald-400">"Node.js Backend Architecture"</span>,</p>
+              <p class="pl-8"><span class="text-emerald-600 dark:text-emerald-400">"Angular Enterprise Frontend"</span>,</p>
+              <p class="pl-8"><span class="text-emerald-600 dark:text-emerald-400">"RESTful API Design"</span></p>
+              <p class="pl-4">],</p>
+              <p class="pl-4"><span class="text-slate-500 dark:text-slate-400">mindset:</span> <span class="text-emerald-600 dark:text-emerald-400">"Clean Code &amp; Continuous Growth"</span>,</p>
+              <p class="pl-4"><span class="text-slate-500 dark:text-slate-400">openToWork:</span> <span class="text-amber-600 dark:text-amber-400 font-bold">true</span>,</p>
+              <p class="pl-4"><span class="text-slate-500 dark:text-slate-400">location:</span> <span class="text-emerald-600 dark:text-emerald-400">"Egypt"</span></p>
+              <p>};</p>
+            </div>
+
+            <!-- Quick Profile Bio Footnote -->
+            <div class="mt-6 pt-4 border-t border-slate-200 dark:border-brand-navy-800 flex items-center justify-between text-xs">
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-brand-cyan"></div>
+                <span class="text-slate-500 dark:text-slate-400">Status: Ready to collaborate</span>
+              </div>
+              <a href="#contact" class="text-brand-blue dark:text-brand-cyan font-bold hover:underline">Get in touch &rarr;</a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Column: Engaging Professional Story & "What I Do" (7 Cols) -->
+        <div class="lg:col-span-7 space-y-6" data-reveal data-reveal-delay="200">
+          
+          <div class="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-base sm:text-lg">
+            <p>
+              I am a dedicated <strong class="text-slate-900 dark:text-white font-semibold">Full-Stack Developer</strong> specializing in <strong class="text-brand-blue dark:text-brand-cyan font-semibold">Node.js</strong> and <strong class="text-brand-blue dark:text-brand-cyan font-semibold">Angular</strong>. My journey in technology is driven by a deep curiosity for how digital systems connect people and solve real-world problems.
+            </p>
+            <p>
+              With strong foundations in both frontend engineering and backend system design, I bridge the gap between creative visual interfaces and robust server architectures. I care deeply about writing clean, maintainable code, adhering to modern software design patterns, and delivering responsive applications that feel effortless to use.
+            </p>
+            <p>
+              Whether structuring modular REST APIs or building responsive client-side experiences, I bring a continuous learning mindset, keen attention to detail, and a proactive problem-solving approach to every project.
+            </p>
+          </div>
+
+          <!-- "What I Do" Service Grid -->
+          <div class="pt-4">
+            <h3 class="text-sm font-mono tracking-wider uppercase text-slate-500 dark:text-slate-400 font-semibold mb-4">
+              What I Do
+            </h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              
+              <!-- Card 1: Frontend Development -->
+              <div class="p-4 rounded-2xl glass-panel border border-slate-200 dark:border-brand-navy-800 hover:border-brand-cyan/40 transition-colors">
+                <div class="w-10 h-10 rounded-xl bg-brand-cyan/15 flex items-center justify-center text-brand-blue dark:text-brand-cyan mb-3">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">Frontend Development</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                  Building reactive, modular Single-Page Applications with Angular, TypeScript, and modern CSS frameworks.
+                </p>
+              </div>
+
+              <!-- Card 2: Backend Development -->
+              <div class="p-4 rounded-2xl glass-panel border border-slate-200 dark:border-brand-navy-800 hover:border-brand-cyan/40 transition-colors">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/15 flex items-center justify-center text-emerald-500 mb-3">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
+                </div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">Backend Development</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                  Architecting server-side services with Node.js, managing business logic, routing, and reliable data flow.
+                </p>
+              </div>
+
+              <!-- Card 3: API Development -->
+              <div class="p-4 rounded-2xl glass-panel border border-slate-200 dark:border-brand-navy-800 hover:border-brand-cyan/40 transition-colors">
+                <div class="w-10 h-10 rounded-xl bg-blue-500/15 flex items-center justify-center text-blue-500 mb-3">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                </div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">API Development</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                  Creating secure, well-structured RESTful endpoints, request validation, authentication, and JSON handling.
+                </p>
+              </div>
+
+              <!-- Card 4: Responsive Web Design -->
+              <div class="p-4 rounded-2xl glass-panel border border-slate-200 dark:border-brand-navy-800 hover:border-brand-cyan/40 transition-colors">
+                <div class="w-10 h-10 rounded-xl bg-purple-500/15 flex items-center justify-center text-purple-400 mb-3">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                </div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">Responsive Web Design</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                  Crafting fluid layouts tailored for smartphones, tablets, laptops, and ultra-wide screens using Tailwind CSS.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================================================
+       SECTION 3: EDUCATION
+       ================================================== -->
+  <section id="education" class="py-24 relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Tag & Heading -->
+      <div class="text-center max-w-3xl mx-auto mb-16" data-reveal>
+        <span class="section-tag mb-4">Academic Background</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Education &amp; Academic Foundation
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300">
+          Rigorous academic grounding in information systems, computing principles, and technology management.
+        </p>
+      </div>
+
+      <!-- Academic Card -->
+      <div class="max-w-3xl mx-auto" data-reveal data-reveal-delay="100">
+        <div class="relative rounded-3xl glass-panel-elevated border border-brand-cyan/30 p-8 sm:p-10 shadow-2xl bg-white/80 dark:bg-brand-navy-850/80 glow-card">
+          
+          <div class="flex flex-col sm:flex-row items-start gap-6">
+            
+            <!-- Graduation Cap Icon Badge -->
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-cyan/25 to-brand-blue/30 border border-brand-cyan/40 flex items-center justify-center text-brand-cyan shrink-0 shadow-lg shadow-brand-cyan/15">
+              <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 14l9-5-9-5-9 5 9 5zm0 0v6"></path>
+              </svg>
+            </div>
+
+            <!-- Degree & Faculty Information -->
+            <div class="space-y-4 flex-1">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-blue/15 text-brand-blue dark:text-brand-cyan text-xs font-mono font-semibold">
+                <span>Higher Education</span>
+              </div>
+
+              <div>
+                <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-snug">
+                  Faculty of Management Technology and Information Systems
+                </h3>
+                <p class="text-base sm:text-lg font-semibold text-brand-blue dark:text-brand-cyan mt-1">
+                  Department of Information Systems and Technology
+                </p>
+              </div>
+
+              <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                Comprehensive study of computer information systems, software engineering principles, database structures, systems analysis, and enterprise technology management.
+              </p>
+
+              <!-- Academic Disciplines Pills -->
+              <div class="pt-2 flex flex-wrap gap-2">
+                <span class="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-brand-navy-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-brand-navy-700">
+                  Information Systems
+                </span>
+                <span class="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-brand-navy-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-brand-navy-700">
+                  Database Management
+                </span>
+                <span class="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-brand-navy-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-brand-navy-700">
+                  Systems Architecture
+                </span>
+                <span class="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-brand-navy-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-brand-navy-700">
+                  Software Engineering
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================================================
+       SECTION 4: EXPERIENCE
+       ================================================== -->
+  <section id="experience" class="py-24 relative overflow-hidden bg-slate-50/50 dark:bg-brand-navy-900/40">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Tag & Heading -->
+      <div class="text-center max-w-3xl mx-auto mb-16" data-reveal>
+        <span class="section-tag mb-4">Professional Training</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Training &amp; Practical Experience
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300">
+          Intensive institutional training programs focused on practical development, modern software engineering, and industry standards.
+        </p>
+      </div>
+
+      <!-- Modern Vertical Timeline -->
+      <div class="relative max-w-3xl mx-auto">
+        
+        <!-- Central Line -->
+        <div class="absolute left-6 sm:left-8 top-4 bottom-4 w-0.5 bg-gradient-to-b from-brand-cyan via-brand-blue to-transparent" aria-hidden="true"></div>
+
+        <div class="space-y-12">
+          
+          <!-- Experience Item 1: NTI -->
+          <div class="relative flex items-start gap-6 sm:gap-8 group" data-reveal data-reveal-delay="100">
+            <!-- Timeline Pin -->
+            <div class="relative z-10 w-12 sm:w-16 h-12 sm:h-16 rounded-2xl bg-white dark:bg-brand-navy-900 border-2 border-brand-cyan flex items-center justify-center shrink-0 shadow-lg shadow-brand-cyan/20 group-hover:scale-110 transition-transform">
+              <span class="font-mono font-bold text-xs sm:text-sm text-brand-cyan">01</span>
+            </div>
+
+            <!-- Content Card -->
+            <div class="flex-1 rounded-2xl glass-panel border border-slate-200 dark:border-brand-navy-800 p-6 sm:p-8 hover:border-brand-cyan/40 transition-all glow-card bg-white/80 dark:bg-brand-navy-850/80">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-brand-cyan/15 text-brand-blue dark:text-brand-cyan">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  Duration: 3 Months
+                </span>
+                <span class="text-xs font-mono text-slate-500 dark:text-slate-400">
+                  Type: Training Program
+                </span>
+              </div>
+
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+                National Telecommunication Institute (NTI)
+              </h3>
+              <p class="text-sm font-semibold text-brand-blue dark:text-brand-cyan mt-1">
+                Specialized Training Program
+              </p>
+
+              <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base mt-4 leading-relaxed">
+                Comprehensive training program dedicated to professional software learning, practical development methodologies, and hands-on technical problem solving. Engaged in rigorous practical coursework sharpening real-world software practices.
+              </p>
+
+              <div class="mt-4 pt-4 border-t border-slate-100 dark:border-brand-navy-800/80 flex items-center gap-2 text-xs font-mono text-slate-500 dark:text-slate-400">
+                <svg class="w-4 h-4 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                Professional Learning • Practical Development • Technical Workflows
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience Item 2: ITI -->
+          <div class="relative flex items-start gap-6 sm:gap-8 group" data-reveal data-reveal-delay="200">
+            <!-- Timeline Pin -->
+            <div class="relative z-10 w-12 sm:w-16 h-12 sm:h-16 rounded-2xl bg-white dark:bg-brand-navy-900 border-2 border-brand-blue flex items-center justify-center shrink-0 shadow-lg shadow-brand-blue/20 group-hover:scale-110 transition-transform">
+              <span class="font-mono font-bold text-xs sm:text-sm text-brand-blue dark:text-brand-cyan">02</span>
+            </div>
+
+            <!-- Content Card -->
+            <div class="flex-1 rounded-2xl glass-panel border border-slate-200 dark:border-brand-navy-800 p-6 sm:p-8 hover:border-brand-blue/40 transition-all glow-card bg-white/80 dark:bg-brand-navy-850/80">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-brand-blue/15 text-brand-blue dark:text-brand-cyan">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  Duration: 1 Month
+                </span>
+                <span class="text-xs font-mono text-slate-500 dark:text-slate-400">
+                  Type: Summer Training
+                </span>
+              </div>
+
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+                Information Technology Institute (ITI)
+              </h3>
+              <p class="text-sm font-semibold text-brand-blue dark:text-brand-cyan mt-1">
+                Summer Training Program
+              </p>
+
+              <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base mt-4 leading-relaxed">
+                Intensive summer training experience centering on core software principles, modern development standards, collaborative coding practices, and foundational technical growth.
+              </p>
+
+              <div class="mt-4 pt-4 border-t border-slate-100 dark:border-brand-navy-800/80 flex items-center gap-2 text-xs font-mono text-slate-500 dark:text-slate-400">
+                <svg class="w-4 h-4 text-brand-blue dark:text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                Practical Learning • Code Quality • Engineering Fundamentals
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================================================
+       SECTION 5: SKILLS
+       ================================================== -->
+  <section id="skills" class="py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Tag & Heading -->
+      <div class="text-center max-w-3xl mx-auto mb-16" data-reveal>
+        <span class="section-tag mb-4">Technical Stack</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Skills &amp; Technologies
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300">
+          A focused technology toolkit for crafting modern full-stack web applications, APIs, and client experiences.
+        </p>
+      </div>
+
+      <!-- Skills Categories Grid -->
+      <div class="space-y-12">
+        
+        <!-- Category 1: Frontend Development -->
+        <div data-reveal data-reveal-delay="100">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-3 h-3 rounded-full bg-brand-cyan shadow-sm shadow-brand-cyan"></div>
+            <h3 class="text-lg font-bold font-mono tracking-wider uppercase text-slate-900 dark:text-white">
+              Frontend Development
+            </h3>
+            <span class="text-xs font-mono text-slate-400 dark:text-slate-500">(8 Technologies)</span>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            
+            <!-- Skill: Angular -->
+            <div class="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-brand-navy-800 hover:border-red-500/50 transition-all glow-card group bg-white/70 dark:bg-brand-navy-850/70" data-tilt>
+              <div class="flex items-center gap-3.5">
+                <div class="w-11 h-11 rounded-xl bg-red-500/10 dark:bg-red-500/20 flex items-center justify-center text-red-500 font-bold group-hover:scale-110 transition-transform">
+                  <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 2L2 5.5l1.5 13L12 22l8.5-3.5L22 5.5 12 2zm0 2.8l6.3 2.2-1 8.8L12 18.5l-5.3-2.7-1-8.8L12 4.8zm0 2.4L8.5 14h1.8l.8-2h1.8l.8 2h1.8L12 7.2zm-.9 3.5l.9-2.3.9 2.3h-1.8z"/></svg>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white text-base group-hover:text-red-500 transition-colors">Angular</h4>
+                  <span class="text-xs font-mono text-slate-500 dark:text-slate-400">SPA Framework</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Skill: TypeScript -->
+            <div class="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-brand-navy-800 hover:border-blue-500/50 transition-all glow-card group bg-white/70 dark:bg-brand-navy-850/70" data-tilt>
+              <div class="flex items-center gap-3.5">
+                <div class="w-11 h-11 rounded-xl bg-blue-500/10 dark:bg-blue-500/20 flex items-center justify-center text-blue-500 font-bold group-hover:scale-110 transition-transform">
+                  <span class="font-mono font-extrabold text-sm">TS</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white text-base group-hover:text-blue-500 transition-colors">TypeScript</h4>
+                  <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Typed JS</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Skill: JavaScript -->
+            <div class="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-brand-navy-800 hover:border-amber-400/50 transition-all glow-card group bg-white/70 dark:bg-brand-navy-850/70" data-tilt>
+              <div class="flex items-center gap-3.5">
+                <div class="w-11 h-11 rounded-xl bg-amber-400/10 dark:bg-amber-400/20 flex items-center justify-center text-amber-500 dark:text-amber-400 font-bold group-hover:scale-110 transition-transform">
+                  <span class="font-mono font-extrabold text-sm">JS</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white text-base group-hover:text-amber-400 transition-colors">JavaScript</h4>
+                  <span class="text-xs font-mono text-slate-500 dark:text-slate-400">ES6+ Standard</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Skill: Tailwind CSS -->
+            <div class="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-brand-navy-800 hover:border-brand-cyan/50 transition-all glow-card group bg-white/70 dark:bg-brand-navy-850/70" data-tilt>
+              <div class="flex items-center gap-3.5">
+                <div class="w-11 h-11 rounded-xl bg-brand-cyan/15 flex items-center justify-center text-brand-cyan font-bold group-hover:scale-110 transition-transform">
+                  <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/></svg>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white text-base group-hover:text-brand-cyan transition-colors">Tailwind CSS</h4>
+                  <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Utility Styling</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Skill: HTML5 -->
+            <div class="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-brand-navy-800 hover:border-orange-500/50 transition-all glow-card group bg-white/70 dark:bg-brand-navy-850/70" data-tilt>
+              <div class="flex items-center gap-3.5">
+                <div class="w-11 h-11 rounded-xl bg-orange-500/10 dark:bg-orange-500/20 flex items-center justify-center text-orange-500 font-bold group-hover:scale-110 transition-transform">
+                  <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 2L2.5 5.2l1.6 13.4L12 22l7.9-3.4 1.6-13.4L12 2zm5.7 6.4h-7.6l.2 2.1h7.2l-.6 6-4.9 1.4-4.9-1.4-.3-3.6h2.1l.2 1.8 2.9.8 2.9-.8.3-2.6H7.3l-.6-6.8h11.2l-.2 3.1z"/></svg>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white text-base group-hover:text-orange-500 transition-colors">HTML5</h4>
+                  <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Semantic Web</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Skill: CSS3 -->
+            <div class="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-brand-navy-800 hover:border-sky-500/50 transition-all glow-card group bg-white/70 dark:bg-brand-navy-850/70" data-tilt>
+              <div class="flex items-center gap-3.5">
+                <div class="w-11 h-11 rounded-xl bg-sky-500/10 dark:bg-sky-500/20 flex items-center justify-center text-sky-500 font-bold group-hover:scale-110 transition-transform">
+                  <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 2L2.5 5.2l1.6 13.4L12 22l7.9-3.4 1.6-13.4L12 2zm5.7 6.4h-7.6l.2 2.1h7.2l-.6 6-4.9 1.4-4.9-1.4-.3-3.6h2.1l.2 1.8 2.9.8 2.9-.8.3-2.6H7.3l-.6-6.8h11.2l-.2 3.1z"/></svg>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white text-base group-hover:text-sky-500 transition-colors">CSS3</h4>
+                  <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Modern Styles</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Skill: SCSS -->
+            <div class="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-brand-navy-800 hover:border-pink-500/50 transition-all glow-card group bg-white/70 dark:bg-brand-navy-850/70" data-tilt>
+              <div class="flex items-center gap-3.5">
+                <div class="w-11 h-11 rounded-xl bg-pink-500/10 dark:bg-pink-500/20 flex items-center justify-center text-pink-500 font-bold group-hover:scale-110 transition-transform">
+                  <span class="font-mono font-extrabold text-sm">Sass</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white text-base group-hover:text-pink-500 transition-colors">SCSS</h4>
+                  <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Preprocessor</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Skill: Bootstrap -->
+            <div class="p-5 rounded-2xl glass-panel border border-slate-200 dark:border-brand-navy-800 hover:border-purple-600/50 transition-all glow-card group bg-white/70 dark:bg-brand-navy-850/70" data-tilt>
+              <div class="flex items-center gap-3.5">
+                <div class="w-11 h-11 rounded-xl bg-purple-600/10 dark:bg-purple-600/20 flex items-center justify-center text-purple-600 dark:text-purple-400 font-bold group-hover:scale-110 transition-transform">
+                  <span class="font-mono font-extrabold text-sm">B</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white text-base group-hover:text-purple-500 transition-colors">Bootstrap</h4>
+                  <span class="text-xs font-mono text-slate-500 dark:text-slate-400">UI Components</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Row: Backend, Programming & Tools -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-reveal data-reveal-delay="200">
+          
+          <!-- Category 2: Backend Development -->
+          <div class="p-6 rounded-3xl glass-panel-elevated border border-slate-200 dark:border-brand-navy-800 bg-white/80 dark:bg-brand-navy-850/80">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-3 h-3 rounded-full bg-emerald-400 shadow-sm shadow-emerald-400"></div>
+              <h3 class="text-base font-bold font-mono tracking-wider uppercase text-slate-900 dark:text-white">
+                Backend Development
+              </h3>
+            </div>
+
+            <!-- Node.js Card -->
+            <div class="p-4 rounded-2xl glass-panel border border-slate-200 dark:border-brand-navy-800 hover:border-emerald-500/50 transition-all glow-card group bg-white/70 dark:bg-brand-navy-900/70" data-tilt>
+              <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-xl bg-emerald-500/15 flex items-center justify-center text-emerald-500 font-bold group-hover:scale-110 transition-transform">
+                  <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12 2l9 5.2v10.4L12 22.8 3 17.6V7.2L12 2zm-1.2 5.5v2.8l2.4 1.4-2.4 1.4v2.8l4.8-2.8V7.5l-4.8 2.8z"/></svg>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white text-base group-hover:text-emerald-400 transition-colors">Node.js</h4>
+                  <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Runtime &amp; Server APIs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: Programming -->
+          <div class="p-6 rounded-3xl glass-panel-elevated border border-slate-200 dark:border-brand-navy-800 bg-white/80 dark:bg-brand-navy-850/80">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-3 h-3 rounded-full bg-blue-400 shadow-sm shadow-blue-400"></div>
+              <h3 class="text-base font-bold font-mono tracking-wider uppercase text-slate-900 dark:text-white">
+                Programming
+              </h3>
+            </div>
+
+            <!-- C++ Card -->
+            <div class="p-4 rounded-2xl glass-panel border border-slate-200 dark:border-brand-navy-800 hover:border-blue-400/50 transition-all glow-card group bg-white/70 dark:bg-brand-navy-900/70" data-tilt>
+              <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-xl bg-blue-600/15 flex items-center justify-center text-blue-500 font-bold group-hover:scale-110 transition-transform">
+                  <span class="font-mono font-extrabold text-sm">C++</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white text-base group-hover:text-blue-400 transition-colors">C++</h4>
+                  <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Algorithms &amp; Logic</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 4: Tools -->
+          <div class="p-6 rounded-3xl glass-panel-elevated border border-slate-200 dark:border-brand-navy-800 bg-white/80 dark:bg-brand-navy-850/80">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-3 h-3 rounded-full bg-rose-400 shadow-sm shadow-rose-400"></div>
+              <h3 class="text-base font-bold font-mono tracking-wider uppercase text-slate-900 dark:text-white">
+                Tools &amp; Version Control
+              </h3>
+            </div>
+
+            <!-- Git Card -->
+            <div class="p-4 rounded-2xl glass-panel border border-slate-200 dark:border-brand-navy-800 hover:border-rose-500/50 transition-all glow-card group bg-white/70 dark:bg-brand-navy-900/70" data-tilt>
+              <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-xl bg-rose-500/15 flex items-center justify-center text-rose-500 font-bold group-hover:scale-110 transition-transform">
+                  <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M21.6 10.9L13.1 2.4c-.6-.6-1.5-.6-2.1 0L8.6 4.8l2.6 2.6c.6-.2 1.3-.1 1.8.4.5.5.6 1.3.4 1.9l2.5 2.5c.6-.2 1.3-.1 1.9.4.7.7.7 1.9 0 2.6-.7.7-1.9.7-2.6 0-.6-.6-.7-1.4-.4-2l-2.4-2.4v5.3c.2.1.4.3.5.5.7.7.7 1.9 0 2.6-.7.7-1.9.7-2.6 0-.7-.7-.7-1.9 0-2.6.2-.2.4-.4.6-.5V8.8c-.2-.1-.4-.3-.6-.5-.6-.6-.7-1.4-.4-2L7.5 3.9 2.4 9c-.6.6-.6 1.5 0 2.1l8.5 8.5c.6.6 1.5.6 2.1 0l8.6-8.6c.6-.6.6-1.5 0-2.1z"/></svg>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white text-base group-hover:text-rose-500 transition-colors">Git</h4>
+                  <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Version Management</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================================================
+       SECTION 6: PROJECTS
+       ================================================== -->
+  <section id="projects" class="py-24 relative overflow-hidden bg-slate-50/50 dark:bg-brand-navy-900/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Tag & Heading -->
+      <div class="text-center max-w-3xl mx-auto mb-16" data-reveal>
+        <span class="section-tag mb-4">Portfolio Showcase</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Featured Projects
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300">
+          Some of the projects I've worked on.
+        </p>
+      </div>
+
+      <!-- Responsive Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- PROJECT 1: Instagram Clone -->
+        <article class="rounded-3xl glass-panel-elevated border border-slate-200 dark:border-brand-navy-800 hover:border-brand-cyan/40 transition-all duration-300 flex flex-col justify-between overflow-hidden group glow-card bg-white/80 dark:bg-brand-navy-850/80" data-tilt data-reveal data-reveal-delay="100">
+          <div>
+            <!-- Project Preview Visual -->
+            <div class="relative overflow-hidden aspect-[16/10] bg-brand-navy-950">
+              <img 
+                src="assets/images/instagram.png" 
+                alt="Instagram Clone Project Preview" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                width="800"
+                height="500"
+                loading="lazy"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-navy-950/80 via-transparent to-transparent opacity-60"></div>
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-mono font-bold bg-brand-cyan text-brand-navy-950 shadow-md">
+                Frontend / SPA
+              </span>
+            </div>
+
+            <!-- Project Details -->
+            <div class="p-6 sm:p-7">
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white group-hover:text-brand-cyan transition-colors">
+                Instagram Clone
+              </h3>
+              
+              <p class="text-slate-600 dark:text-slate-300 text-sm mt-3 leading-relaxed">
+                A social media application inspired by Instagram, demonstrating modern web development concepts and social media interface design.
+              </p>
+
+              <!-- Confirmed & Editable Technology Tags -->
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="tech-badge">Web Development</span>
+                <span class="tech-badge">UI/UX Interface</span>
+                <span class="tech-badge">Responsive Design</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Actions / CTA Buttons -->
+          <div class="p-6 sm:p-7 pt-0 border-t border-slate-100 dark:border-brand-navy-800/80 mt-4 flex items-center justify-between gap-3">
+            <a 
+              href="https://github.com/alaamaghraby149" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold border border-slate-300 dark:border-brand-navy-700 text-slate-700 dark:text-slate-200 hover:border-brand-cyan hover:text-brand-cyan transition-colors"
+              aria-label="View Instagram Clone Source Code on GitHub"
+            >
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub</span>
+            </a>
+
+            <a 
+              href="#contact" 
+              class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-brand-cyan/15 text-brand-blue dark:text-brand-cyan border border-brand-cyan/30 hover:bg-brand-cyan hover:text-brand-navy-950 transition-colors"
+              aria-label="Request Live Demo for Instagram Clone"
+            >
+              <span>Live Demo</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROJECT 2: E-commerce API -->
+        <article class="rounded-3xl glass-panel-elevated border border-slate-200 dark:border-brand-navy-800 hover:border-brand-cyan/40 transition-all duration-300 flex flex-col justify-between overflow-hidden group glow-card bg-white/80 dark:bg-brand-navy-850/80" data-tilt data-reveal data-reveal-delay="200">
+          <div>
+            <!-- Project Preview Visual -->
+            <div class="relative overflow-hidden aspect-[16/10] bg-brand-navy-950">
+              <img 
+                src="assets/images/project-ecommerce-api.svg" 
+                alt="E-commerce API Project Preview" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                width="800"
+                height="500"
+                loading="lazy"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-navy-950/80 via-transparent to-transparent opacity-60"></div>
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-mono font-bold bg-emerald-400 text-brand-navy-950 shadow-md">
+                Backend / API
+              </span>
+            </div>
+
+            <!-- Project Details -->
+            <div class="p-6 sm:p-7">
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white group-hover:text-brand-cyan transition-colors">
+                E-commerce API
+              </h3>
+              
+              <p class="text-slate-600 dark:text-slate-300 text-sm mt-3 leading-relaxed">
+                A backend API project focused on e-commerce architecture and server-side application development.
+              </p>
+
+              <!-- Confirmed & Editable Technology Tags -->
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">RESTful API</span>
+                <span class="tech-badge">Server Architecture</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Actions / CTA Buttons -->
+          <div class="p-6 sm:p-7 pt-0 border-t border-slate-100 dark:border-brand-navy-800/80 mt-4 flex items-center justify-between gap-3">
+            <a 
+              href="https://github.com/alaamaghraby149" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold border border-slate-300 dark:border-brand-navy-700 text-slate-700 dark:text-slate-200 hover:border-brand-cyan hover:text-brand-cyan transition-colors"
+              aria-label="View E-commerce API Source Code on GitHub"
+            >
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub</span>
+            </a>
+
+            <a 
+              href="#contact" 
+              class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-brand-cyan/15 text-brand-blue dark:text-brand-cyan border border-brand-cyan/30 hover:bg-brand-cyan hover:text-brand-navy-950 transition-colors"
+              aria-label="Request API Documentation Demo"
+            >
+              <span>API Demo</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- PROJECT 3: Shop -->
+        <article class="rounded-3xl glass-panel-elevated border border-slate-200 dark:border-brand-navy-800 hover:border-brand-cyan/40 transition-all duration-300 flex flex-col justify-between overflow-hidden group glow-card bg-white/80 dark:bg-brand-navy-850/80" data-tilt data-reveal data-reveal-delay="300">
+          <div>
+            <!-- Project Preview Visual -->
+            <div class="relative overflow-hidden aspect-[16/10] bg-brand-navy-950">
+              <img 
+                src="assets/images/elegant.png" 
+                alt="Shop E-commerce Project Preview" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                width="800"
+                height="500"
+                loading="lazy"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-navy-950/80 via-transparent to-transparent opacity-60"></div>
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-mono font-bold bg-brand-blue text-white shadow-md">
+                E-Commerce
+              </span>
+            </div>
+
+            <!-- Project Details -->
+            <div class="p-6 sm:p-7">
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white group-hover:text-brand-cyan transition-colors">
+                Shop
+              </h3>
+              
+              <p class="text-slate-600 dark:text-slate-300 text-sm mt-3 leading-relaxed">
+                An online shopping project featuring a modern shopping interface and e-commerce experience.
+              </p>
+
+              <!-- Confirmed & Editable Technology Tags -->
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="tech-badge">E-Commerce UI</span>
+                <span class="tech-badge">Web Application</span>
+                <span class="tech-badge">Shopping Flow</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Actions / CTA Buttons -->
+          <div class="p-6 sm:p-7 pt-0 border-t border-slate-100 dark:border-brand-navy-800/80 mt-4 flex items-center justify-between gap-3">
+            <a 
+              href="https://github.com/alaamaghraby149" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold border border-slate-300 dark:border-brand-navy-700 text-slate-700 dark:text-slate-200 hover:border-brand-cyan hover:text-brand-cyan transition-colors"
+              aria-label="View Shop Project Source Code on GitHub"
+            >
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub</span>
+            </a>
+
+            <a 
+              href="#contact" 
+              class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-brand-cyan/15 text-brand-blue dark:text-brand-cyan border border-brand-cyan/30 hover:bg-brand-cyan hover:text-brand-navy-950 transition-colors"
+              aria-label="Request Live Demo for Shop"
+            >
+              <span>Live Demo</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================================================
+       SECTION 7: TESTIMONIALS
+       ================================================== -->
+  <section id="testimonials" class="py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Tag & Heading -->
+      <div class="text-center max-w-3xl mx-auto mb-12" data-reveal>
+        <span class="section-tag mb-4">Endorsements</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Testimonials &amp; Peer Reviews
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300">
+          What collaborators, mentors, and teams say about working together.
+        </p>
+
+        <!-- Clearly Labeled SAMPLE / DEMO Notice -->
+        <div class="mt-6 inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-700 dark:text-amber-300 text-xs font-medium">
+          <svg class="w-4 h-4 shrink-0 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span><strong>Notice:</strong> The cards below are labeled <em>Sample / Demo Placeholders</em> for visual presentation and are ready to be replaced with real endorsements.</span>
+        </div>
+      </div>
+
+      <!-- Testimonials Grid (Clearly Labeled Demo Placeholders) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Sample Testimonial 1 -->
+        <div class="p-8 rounded-3xl glass-panel-elevated border border-slate-200 dark:border-brand-navy-800 flex flex-col justify-between glow-card bg-white/80 dark:bg-brand-navy-850/80" data-tilt data-reveal data-reveal-delay="100">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <!-- Rating Stars -->
+              <div class="flex text-amber-400 gap-1" aria-label="5 out of 5 stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono uppercase font-bold bg-slate-200 dark:bg-brand-navy-900 text-slate-600 dark:text-slate-400">
+                Sample Placeholder
+              </span>
+            </div>
+
+            <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed italic">
+              "Alaa brings great focus and problem-solving dedication to full-stack engineering. Her proactive approach to writing clean, maintainable code makes her an asset to development teams."
+            </p>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-slate-200 dark:border-brand-navy-800 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-brand-cyan/20 border border-brand-cyan/30 flex items-center justify-center font-bold text-brand-cyan font-mono text-sm">
+              TC
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-sm">Technical Collaborator</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Software Project Peer • Sample Feedback</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample Testimonial 2 -->
+        <div class="p-8 rounded-3xl glass-panel-elevated border border-slate-200 dark:border-brand-navy-800 flex flex-col justify-between glow-card bg-white/80 dark:bg-brand-navy-850/80" data-tilt data-reveal data-reveal-delay="200">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <!-- Rating Stars -->
+              <div class="flex text-amber-400 gap-1" aria-label="5 out of 5 stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono uppercase font-bold bg-slate-200 dark:bg-brand-navy-900 text-slate-600 dark:text-slate-400">
+                Sample Placeholder
+              </span>
+            </div>
+
+            <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed italic">
+              "Demonstrates quick learning aptitude and strong technical fundamentals across both Node.js server architectures and Angular frontend components."
+            </p>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-slate-200 dark:border-brand-navy-800 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-brand-blue/20 border border-brand-blue/40 flex items-center justify-center font-bold text-brand-blue dark:text-brand-cyan font-mono text-sm">
+              TI
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-sm">Training Instructor</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Technical Mentor • Sample Feedback</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample Testimonial 3 -->
+        <div class="p-8 rounded-3xl glass-panel-elevated border border-slate-200 dark:border-brand-navy-800 flex flex-col justify-between glow-card bg-white/80 dark:bg-brand-navy-850/80" data-tilt data-reveal data-reveal-delay="300">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <!-- Rating Stars -->
+              <div class="flex text-amber-400 gap-1" aria-label="5 out of 5 stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono uppercase font-bold bg-slate-200 dark:bg-brand-navy-900 text-slate-600 dark:text-slate-400">
+                Sample Placeholder
+              </span>
+            </div>
+
+            <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed italic">
+              "Diligent and responsive communicator with a strong commitment to delivering modern, responsive user interfaces and clean API contracts."
+            </p>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-slate-200 dark:border-brand-navy-800 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center font-bold text-emerald-400 font-mono text-sm">
+              PM
+            </div>
+            <div>
+              <h4 class="font-bold text-slate-900 dark:text-white text-sm">Project Lead</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Engineering Lead • Sample Feedback</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================================================
+       SECTION 8: GET IN TOUCH
+       ================================================== -->
+  <section id="contact" class="py-24 relative overflow-hidden bg-slate-50/50 dark:bg-brand-navy-900/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Tag & Heading -->
+      <div class="text-center max-w-3xl mx-auto mb-16" data-reveal>
+        <span class="section-tag mb-4">Contact</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Let's Build Something Great Together.
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300">
+          Have a project in mind or an opportunity to discuss? I'd love to hear from you.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left Column: Contact Information & Direct Channels (5 Cols) -->
+        <div class="lg:col-span-5 space-y-8" data-reveal data-reveal-delay="100">
+          
+          <div class="p-8 rounded-3xl glass-panel-elevated border border-slate-200 dark:border-brand-navy-800 space-y-6 bg-white/80 dark:bg-brand-navy-850/80">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+              Get in Touch Directly
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+              I am open to full-time engineering roles, freelance collaborations, and software consulting. Feel free to reach out through email or connect on LinkedIn and GitHub.
+            </p>
+
+            <div class="space-y-4 pt-2">
+              
+              <!-- Email Card -->
+              <a href="mailto:aymalaaan11@gmail.com" class="flex items-center gap-4 p-4 rounded-2xl glass-panel border border-slate-200 dark:border-brand-navy-800 hover:border-brand-cyan/50 transition-colors group">
+                <div class="w-12 h-12 rounded-xl bg-brand-cyan/15 flex items-center justify-center text-brand-blue dark:text-brand-cyan shrink-0 group-hover:scale-110 transition-transform">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </div>
+                <div class="overflow-hidden">
+                  <p class="text-xs font-mono text-slate-500 dark:text-slate-400">Email Address</p>
+                  <p class="text-sm sm:text-base font-bold text-slate-900 dark:text-white truncate group-hover:text-brand-cyan transition-colors">
+                    aymalaaan11@gmail.com
+                  </p>
+                </div>
+              </a>
+
+              <!-- LinkedIn Card -->
+              <a href="https://www.linkedin.com/in/alaa-maghraby" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-2xl glass-panel border border-slate-200 dark:border-brand-navy-800 hover:border-brand-cyan/50 transition-colors group">
+                <div class="w-12 h-12 rounded-xl bg-blue-600/15 flex items-center justify-center text-blue-500 shrink-0 group-hover:scale-110 transition-transform">
+                  <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </div>
+                <div>
+                  <p class="text-xs font-mono text-slate-500 dark:text-slate-400">Professional Network</p>
+                  <p class="text-sm sm:text-base font-bold text-slate-900 dark:text-white group-hover:text-brand-cyan transition-colors">
+                    linkedin.com/in/alaa-maghraby
+                  </p>
+                </div>
+              </a>
+
+              <!-- GitHub Card -->
+              <a href="https://github.com/alaamaghraby149" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-2xl glass-panel border border-slate-200 dark:border-brand-navy-800 hover:border-brand-cyan/50 transition-colors group">
+                <div class="w-12 h-12 rounded-xl bg-slate-800/10 dark:bg-slate-700/30 flex items-center justify-center text-slate-900 dark:text-white shrink-0 group-hover:scale-110 transition-transform">
+                  <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </div>
+                <div>
+                  <p class="text-xs font-mono text-slate-500 dark:text-slate-400">Code Repositories</p>
+                  <p class="text-sm sm:text-base font-bold text-slate-900 dark:text-white group-hover:text-brand-cyan transition-colors">
+                    github.com/alaamaghraby149
+                  </p>
+                </div>
+              </a>
+
+            </div>
+
+          </div>
+
+          <!-- Formspree Integration Instructions Callout Card -->
+          <div class="p-6 rounded-2xl glass-panel border border-brand-cyan/30 bg-brand-cyan/5 dark:bg-brand-cyan/5 text-xs text-slate-600 dark:text-slate-300 space-y-2.5">
+            <div class="flex items-center gap-2 font-bold text-brand-blue dark:text-brand-cyan">
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <span>Formspree Email Delivery Configuration</span>
+            </div>
+            <p>
+              The form uses <strong>Formspree</strong> to deliver messages directly to <code class="px-1.5 py-0.5 rounded bg-brand-cyan/15 text-brand-blue dark:text-brand-cyan font-mono">aymalaaan11@gmail.com</code>.
+            </p>
+            <ol class="list-decimal list-inside space-y-1 text-slate-500 dark:text-slate-400">
+              <li>Create a free form at <a href="https://formspree.io" target="_blank" rel="noopener noreferrer" class="text-brand-cyan underline">formspree.io</a> pointing to your email.</li>
+              <li>Copy your form ID (e.g. <code class="font-mono">xpwzlkab</code>).</li>
+              <li>Paste it into <code class="font-mono text-brand-cyan">src/js/contact.js</code>.</li>
+            </ol>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Interactive Contact Form (7 Cols) -->
+        <div class="lg:col-span-7" data-reveal data-reveal-delay="200">
+          
+          <div class="p-8 sm:p-10 rounded-3xl glass-panel-elevated border border-slate-200 dark:border-brand-navy-800 bg-white/85 dark:bg-brand-navy-850/85 shadow-2xl relative">
+            
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+              Send a Direct Message
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 mb-8">
+              Fill out the form below and I will get back to you as soon as possible.
+            </p>
+
+            <!-- Feedback Alert (Success / Error / Notice) -->
+            <div id="contact-response-alert" class="hidden mb-6 p-4 rounded-2xl border text-sm flex items-start gap-3 transition-all" role="alert">
+              <div id="alert-icon" class="shrink-0 mt-0.5"></div>
+              <div>
+                <h4 id="alert-title" class="font-bold text-sm"></h4>
+                <p id="alert-message" class="text-xs mt-1 leading-relaxed"></p>
+              </div>
+            </div>
+
+            <!-- The Form -->
+            <form id="contact-form" class="space-y-6" novalidate>
+              
+              <!-- Full Name Field -->
+              <div class="space-y-2">
+                <label for="contact-name" class="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+                  Full Name <span class="text-red-500">*</span>
+                </label>
+                <div class="relative">
+                  <input 
+                    type="text" 
+                    id="contact-name" 
+                    name="name" 
+                    required 
+                    placeholder="e.g. Jane Doe"
+                    class="w-full px-4 py-3.5 rounded-xl border border-slate-300 dark:border-brand-navy-700 bg-white dark:bg-brand-navy-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-cyan focus:border-transparent transition-all text-sm"
+                  >
+                </div>
+                <p id="name-error" class="hidden text-xs text-red-500 font-medium"></p>
+              </div>
+
+              <!-- Email Address Field -->
+              <div class="space-y-2">
+                <label for="contact-email" class="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+                  Email Address <span class="text-red-500">*</span>
+                </label>
+                <div class="relative">
+                  <input 
+                    type="email" 
+                    id="contact-email" 
+                    name="email" 
+                    required 
+                    placeholder="e.g. jane@company.com"
+                    class="w-full px-4 py-3.5 rounded-xl border border-slate-300 dark:border-brand-navy-700 bg-white dark:bg-brand-navy-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-cyan focus:border-transparent transition-all text-sm"
+                  >
+                </div>
+                <p id="email-error" class="hidden text-xs text-red-500 font-medium"></p>
+              </div>
+
+              <!-- Subject Field -->
+              <div class="space-y-2">
+                <label for="contact-subject" class="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+                  Subject <span class="text-red-500">*</span>
+                </label>
+                <div class="relative">
+                  <input 
+                    type="text" 
+                    id="contact-subject" 
+                    name="subject" 
+                    required 
+                    placeholder="e.g. Full-Stack Developer Opportunity / Project Inquiry"
+                    class="w-full px-4 py-3.5 rounded-xl border border-slate-300 dark:border-brand-navy-700 bg-white dark:bg-brand-navy-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-cyan focus:border-transparent transition-all text-sm"
+                  >
+                </div>
+                <p id="subject-error" class="hidden text-xs text-red-500 font-medium"></p>
+              </div>
+
+              <!-- Message Field -->
+              <div class="space-y-2">
+                <label for="contact-message" class="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+                  Message <span class="text-red-500">*</span>
+                </label>
+                <div class="relative">
+                  <textarea 
+                    id="contact-message" 
+                    name="message" 
+                    rows="5" 
+                    required 
+                    placeholder="Hello Alaa, I would love to discuss a potential project or opportunity..."
+                    class="w-full px-4 py-3.5 rounded-xl border border-slate-300 dark:border-brand-navy-700 bg-white dark:bg-brand-navy-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-cyan focus:border-transparent transition-all text-sm resize-none"
+                  ></textarea>
+                </div>
+                <p id="message-error" class="hidden text-xs text-red-500 font-medium"></p>
+              </div>
+
+              <!-- Submit Button -->
+              <button 
+                type="submit" 
+                id="contact-submit-btn" 
+                data-magnetic 
+                class="w-full btn-accent py-4 rounded-xl font-bold text-sm tracking-wide text-brand-navy-950 shadow-glow-cyan flex items-center justify-center gap-2 cursor-pointer transition-transform hover:-translate-y-0.5"
+              >
+                <!-- Loading Spinner -->
+                <svg id="contact-btn-spinner" class="hidden animate-spin -ml-1 mr-2 h-4 w-4 text-brand-navy-950" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span id="contact-btn-text">Send Message</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </button>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================================================
+       SECTION 9: FOOTER
+       ================================================== -->
+  <footer class="py-12 relative border-t border-slate-200 dark:border-brand-navy-800 bg-white dark:bg-brand-navy-950 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-slate-100 dark:border-brand-navy-900">
+        
+        <!-- Brand Info -->
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-cyan to-brand-blue flex items-center justify-center text-brand-navy-950 font-mono font-extrabold text-xs shadow-md">
+            &lt;AA/&gt;
+          </div>
+          <div>
+            <span class="font-bold text-base text-slate-900 dark:text-white">Alaa Ayman</span>
+            <p class="text-xs text-brand-blue dark:text-brand-cyan font-mono">Full-Stack Developer • Node.js &amp; Angular</p>
+          </div>
+        </div>
+
+        <!-- Social Channels & Direct Email -->
+        <div class="flex items-center gap-6 text-sm text-slate-600 dark:text-slate-300">
+          <a href="https://github.com/alaamaghraby149" target="_blank" rel="noopener noreferrer" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5" aria-label="GitHub">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/alaa-maghraby" target="_blank" rel="noopener noreferrer" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5" aria-label="LinkedIn">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="mailto:aymalaaan11@gmail.com" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5" aria-label="Email">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            <span>aymalaaan11@gmail.com</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar: Dynamic Copyright Notice & Back-to-Top Button -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 text-xs text-slate-500 dark:text-slate-400">
+        <p>
+          &copy; <span id="current-year">2026</span> Alaa Ayman. All rights reserved. Crafted with passion &amp; precision.
+        </p>
+
+        <!-- Back to Top Button -->
+        <button 
+          id="back-to-top" 
+          type="button" 
+          aria-label="Scroll back to top of page" 
+          class="fixed bottom-6 right-6 z-40 p-3 rounded-2xl bg-brand-cyan text-brand-navy-950 font-bold shadow-lg shadow-brand-cyan/30 hover:bg-brand-cyan-light hover:scale-110 opacity-0 pointer-events-none translate-y-4 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-cyan"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+        </button>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Lucide Icons Script -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Main Application Script (ES6 Module) -->
+  <script type="module" src="src/js/main.js"></script>
+</body>
+</html>

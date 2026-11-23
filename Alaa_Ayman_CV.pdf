@@ -1,0 +1,73 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 520 >>
+stream
+BT
+/F1 24 Tf
+50 720 Td
+(Alaa Ayman - Full-Stack Developer) Tj
+/F1 12 Tf
+0 -30 Td
+(Email: aymalaaan11@gmail.com | GitHub: github.com/alaamaghraby149) Tj
+0 -20 Td
+(LinkedIn: linkedin.com/in/alaa-maghraby | Location: Egypt) Tj
+/F1 16 Tf
+0 -40 Td
+(Professional Summary) Tj
+/F1 11 Tf
+0 -20 Td
+(Full-Stack Developer specializing in Node.js and Angular. Passionate about building) Tj
+0 -15 Td
+(modern, scalable web applications with clean architecture and responsive user experiences.) Tj
+/F1 16 Tf
+0 -35 Td
+(Education) Tj
+/F1 11 Tf
+0 -20 Td
+(Faculty of Management Technology and Information Systems) Tj
+0 -15 Td
+(Department of Information Systems and Technology) Tj
+/F1 16 Tf
+0 -35 Td
+(Training & Experience) Tj
+/F1 11 Tf
+0 -20 Td
+(- National Telecommunication Institute (NTI) - Training Program (3 Months)) Tj
+0 -15 Td
+(- Information Technology Institute (ITI) - Summer Training (1 Month)) Tj
+/F1 16 Tf
+0 -35 Td
+(Technical Skills) Tj
+/F1 11 Tf
+0 -20 Td
+(Frontend: HTML5, CSS3, JavaScript, TypeScript, Angular, Tailwind CSS, Bootstrap, SCSS) Tj
+0 -15 Td
+(Backend: Node.js | Programming: C++ | Tools: Git, GitHub) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000227 00000 n 
+0000000799 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+868
+%%EOF

@@ -1,0 +1,33 @@
+{
+  "name": "alaa-ayman-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website for Alaa Ayman - Full-Stack Developer (Node.js & Angular)",
+  "main": "index.html",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/css/input.css -o ./dist/css/style.css --minify",
+    "watch:css": "tailwindcss -i ./src/css/input.css -o ./dist/css/style.css --watch",
+    "build": "tailwindcss -i ./src/css/input.css -o ./dist/css/style.css --minify",
+    "dev": "live-server --port=3000 --entry-file=index.html",
+    "start": "live-server --port=3000 --entry-file=index.html"
+  },
+  "keywords": [
+    "portfolio",
+    "full-stack-developer",
+    "nodejs",
+    "angular",
+    "tailwind",
+    "javascript"
+  ],
+  "author": "Alaa Ayman",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.6.2",
+    "live-server": "^1.2.2",
+    "postcss": "^8.5.33",
+    "tailwindcss": "^3.4.19"
+  },
+  "dependencies": {
+    "gsap": "^3.15.1",
+    "lucide": "^1.76.0"
+  }
+}
